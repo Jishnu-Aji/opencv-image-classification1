@@ -1,80 +1,217 @@
-# Simple Image Classification & Image Processing with OpenCV
+# Simple Image Classification & Image Processing using OpenCV
 
-![Project Hero](file:///C:/Users/user/.gemini/antigravity-ide/brain/7c11a422-e92e-47e1-ba93-aa40e7ec3fcc/image_classification_hero_1779805744206.png)
+<p align="center">
+  <img src="outputs/predictions.png" width="700">
+</p>
+
+---
 
 ## Project Overview
-A beginner‑friendly Python project that demonstrates how to:
-- Load a classic image dataset (scikit‑learn's handwritten digits).
-- Preprocess images with OpenCV (grayscale, resize, contrast/brightness enhancement, Gaussian blur, normalization).
-- Train a machine‑learning model (k‑Nearest Neighbors or SVM).
-- Evaluate performance using accuracy and a confusion matrix.
-- Visualise original vs. enhanced images and sample predictions.
 
-The code is intentionally simple, heavily commented, and organized into reusable utility modules.
+This project demonstrates a complete beginner-friendly Image Classification System built using:
 
-## Technologies Used
-- **Python** (>=3.8)
-- **OpenCV** – image processing (`opencv-python`)
-- **NumPy** – numerical operations
-- **Matplotlib** – plotting and saving figures
-- **scikit‑learn** – dataset, model implementations, evaluation metrics
+- OpenCV for image preprocessing
+- Machine Learning (k-Nearest Neighbors)
+- Visualization using Matplotlib
+- Handwritten Digit Classification using the Scikit-learn Digits Dataset
 
-## Dataset Information
-- **Digits dataset** – 1797 8×8 grayscale images of handwritten digits (0‑9) available via `sklearn.datasets.load_digits`.
-- (Optional) **CIFAR‑10** – placeholder for future extension.
+The project explores essential computer vision techniques including:
 
-## Setup & Installation
-1. **Clone / copy** this repository to your local machine.
-2. Open a terminal in the project root (`cv-1`).
-3. (Optional) Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # on Windows: venv\Scripts\activate
-   ```
-4. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- Image resizing
+- Grayscale conversion
+- Brightness & contrast enhancement
+- Gaussian blur filtering
+- Image normalization
+- Classification & evaluation
 
-## How to Run
+---
+
+# Features
+
+- Image preprocessing with OpenCV  
+- Brightness & contrast enhancement  
+- Gaussian blur filtering  
+- Image normalization  
+- k-NN classification model  
+- Confusion matrix visualization  
+- Prediction visualization  
+- Side-by-side image enhancement comparison  
+- Clean modular project structure  
+
+---
+
+# Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Programming Language |
+| OpenCV | Image Processing |
+| NumPy | Numerical Operations |
+| Matplotlib | Data Visualization |
+| Scikit-learn | Machine Learning |
+
+---
+
+# Project Structure
+
+```bash
+cv-1/
+│
+├── outputs/
+│   ├── comparison_0.png
+│   ├── confusion_matrix.png
+│   └── predictions.png
+│
+├── utils/
+│   ├── data_loader.py
+│   ├── preprocess.py
+│   ├── model.py
+│   └── visualize.py
+│
+├── main.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# Dataset Used
+
+This project uses the Scikit-learn Digits Dataset.
+
+- 1797 grayscale handwritten digit images
+- Digits from 0–9
+- Original image size: 8×8 pixels
+
+Dataset Source:
+
+https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html
+
+---
+
+# Image Processing Pipeline
+
+The following preprocessing techniques were applied using OpenCV:
+
+### Grayscale Conversion
+Converts images into grayscale format for easier processing.
+
+### Image Resizing
+Images resized to 32×32 pixels.
+
+### Brightness & Contrast Enhancement
+Improves visibility and feature clarity.
+
+### Gaussian Blur
+Reduces noise and smoothens images.
+
+### Pixel Normalization
+Normalizes pixel values between 0 and 1.
+
+---
+
+# Machine Learning Model
+
+This project uses:
+
+## k-Nearest Neighbors (k-NN)
+
+- Beginner-friendly classification algorithm
+- Classifies digits based on nearest image neighbors
+
+### Dataset Split
+- Training: 80%
+- Testing: 20%
+
+---
+
+# Results
+
+## Accuracy Achieved
+
+```bash
+Accuracy: 98.33%
+```
+
+---
+
+# Confusion Matrix
+
+<p align="center">
+  <img src="outputs/confusion_matrix.png" width="500">
+</p>
+
+---
+
+# Prediction Visualization
+
+<p align="center">
+  <img src="outputs/predictions.png" width="600">
+</p>
+
+---
+
+# Image Enhancement Comparison
+
+<p align="center">
+  <img src="outputs/comparison_0.png" width="500">
+</p>
+
+---
+
+# How to Run the Project
+
+## 1. Clone Repository
+
+```bash
+git clone YOUR_GITHUB_REPO_LINK
+```
+
+---
+
+## 2. Navigate to Project Folder
+
+```bash
+cd cv-1
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Run the Project
+
 ```bash
 python main.py
 ```
-The script will:
-1. Load the digits dataset.
-2. Apply the full OpenCV preprocessing pipeline.
-3. Split data (80 % train / 20 % test).
-4. Train a **k‑Nearest Neighbors (k=3)** classifier.
-5. Print accuracy and the confusion matrix.
-6. Save visualisations to the `outputs/` folder:
-   - `original_vs_enhanced_*.png`
-   - `confusion_matrix.png`
-   - `predictions.png`
 
-## Results
-Typical output (may vary slightly due to random split):
-```
-Accuracy: 0.9667
-Confusion Matrix:
- [[...]]
-All visualisations saved to the 'outputs/' folder.
-```
-*The confusion matrix heat‑map and sample prediction grid are saved as PNG images in `outputs/`.*
+---
 
-## Folder Structure
-```
-cv-1/
-├─ main.py                # entry point
-├─ requirements.txt       # package list
-├─ README.md              # you are reading it!
-├─ outputs/               # generated figures
-└─ utils/
-   ├─ __init__.py         # makes utils a package
-   ├─ data_loader.py      # dataset loading helpers
-   ├─ preprocess.py       # OpenCV preprocessing pipeline
-   ├─ model.py            # k‑NN / SVM training helpers
-   └─ visualize.py        # image saving & plotting utilities
+# Requirements
+
+```txt
+opencv-python
+numpy
+matplotlib
+scikit-learn
 ```
 
-## License
-MIT License – feel free to modify and share.
+
+# Learning Outcomes
+
+Through this project, I learned:
+
+- Basics of computer vision with OpenCV
+- Image preprocessing techniques
+- Machine learning classification workflow
+- Data visualization techniques
+- Modular Python project structure
+
+
+
